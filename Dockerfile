@@ -2,6 +2,7 @@
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
+RUN yarn config set registry https://registry.npm.taobao.org/
 RUN yarn install
 COPY . .
 RUN yarn build
