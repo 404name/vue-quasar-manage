@@ -2,7 +2,8 @@
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package.json /app/
-RUN npm i --registry=https://registry.npm.taobao.org
+RUN npm install --save core-js@^3
+RUN npm install
 COPY . /app/
 RUN npm run build
 
